@@ -40,6 +40,10 @@ function resetGrid(){
     resetBtn.addEventListener('click', () => {
     boxes.forEach(box => box.remove())
 
+    while (container.firstChild) {
+        container.firstChild.remove()
+    }
+
     divGrid(16, 16);
     colourBox()
     });
@@ -52,11 +56,13 @@ function changeGrid(){
     newGridBtn.addEventListener('click', () => {
         size = window.prompt('Enter size of new grid (>50)', '32');
         if (size == null || size < 1 || size > 51){
-            resetGrid()
             colourBox()
         }
         else{
             resetGrid()
+            while (container.firstChild) {
+                container.firstChild.remove()
+            }
             divGrid(size, size);
             colourBox()
         }
