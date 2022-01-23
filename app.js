@@ -3,6 +3,7 @@ const resetBtn = document.createElement('button')
 const newGridBtn = document.createElement('button')
 const buttonContainer = document.querySelector('.buttons')
 
+container.style.border = "1px solid black";
 //create grid
 
 let rows = 16
@@ -11,7 +12,7 @@ let cols = 16
 function divGrid(rows, cols){
     for (let i = 0; i < (rows * cols); i++){
         const div = document.createElement('div')
-        div.style.border = '1px solid black'
+        div.style.border = '1px solid white'
         container.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
         container.appendChild(div).classList.add('box')
